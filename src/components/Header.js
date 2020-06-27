@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layer, CommandBar} from '@fluentui/react';
+import {CommandBar} from '@fluentui/react';
 import {getTheme, mergeStyles} from "@fluentui/react";
 
 export default function Header() {
@@ -30,8 +30,6 @@ export default function Header() {
     ];
 
     return (
-        <Layer>
-            <CommandBar items={items}/>
-        </Layer>
+        <CommandBar items={items}/>
     );
 }
