@@ -32,6 +32,28 @@ export default function Header() {
             text: 'Problems',
             href: '/problems',
             iconProps: {iconName: 'WaitlistConfirm'}
+        },
+        {
+            key: 'contribute',
+            text: 'Contribute',
+            iconProps: {iconName: 'WavingHand'},
+
+            subMenuProps: {
+                items: [
+                    {
+                        text: 'Tutorial',
+                        key: 'contribute-tutorial',
+                        href: '/contribute-tutorial',
+                        iconProps: {iconName: 'D365TalentInsight'}
+                    },
+                    {
+                        text: 'Problem',
+                        key: 'contribute-problem',
+                        href: '/contribute-problem',
+                        iconProps: {iconName: 'AddToShoppingList'}
+                    },
+                ],
+            },
         }
     ];
 
