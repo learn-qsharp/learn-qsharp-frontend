@@ -5,18 +5,17 @@ import {getTheme, mergeStyles} from "@fluentui/react";
 export default function Header() {
     const theme = getTheme();
 
-    const tittleClass = mergeStyles({
+    const titleClass = mergeStyles({
         marginTop: 'auto',
+        marginRight: '15px',
         marginBottom: 'auto',
         color: theme.palette.neutralPrimary
     })
 
     const items = [
         {
-            onRender: () => <h2 className={tittleClass}>Learn QSharp</h2>
-        },
-        {
-            key: '-'
+            key: 'title',
+            onRender: () => <h2 className={titleClass}>Learn QSharp</h2>
         },
         {
             key: 'tutorials',
