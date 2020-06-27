@@ -4,9 +4,9 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import Home from "./pages/home";
-import Tutorials from "./pages/tutorials";
-import Problems from "./pages/problems";
+import Home from "./pages/Home";
+import Tutorials from "./pages/Tutorials";
+import Problems from "./pages/Problems";
 import Header from "./components/Header";
 
 export default function App() {
