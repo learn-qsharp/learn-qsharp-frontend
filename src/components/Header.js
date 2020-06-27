@@ -1,33 +1,37 @@
 import React from 'react';
 import {CommandBar} from '@fluentui/react';
-import {getTheme, mergeStyles} from "@fluentui/react";
 
 export default function Header() {
-    const theme = getTheme();
-
-    const titleClass = mergeStyles({
-        marginTop: 'auto',
-        marginRight: '15px',
-        marginBottom: 'auto',
-        color: theme.palette.neutralPrimary
-    })
+    const titleClass = {
+        label: {
+            fontSize: 20,
+            fontWeight: 'bold'
+        }
+    }
 
     const items = [
         {
-            key: 'title',
-            onRender: () => <h2 className={titleClass}>Learn QSharp</h2>
+            href: '/',
+            itemType: 2,
+            key: 'learn-qsharp',
+            text: 'Learn QSharp',
+            buttonStyles: titleClass
+        },
+        {
+            itemType: 1,
+            key: 'divider'
         },
         {
             key: 'tutorials',
             text: 'Tutorials',
-            iconProps: {iconName: 'D365TalentLearn'},
-            href: '/tutorials'
+            href: '/tutorials',
+            iconProps: {iconName: 'D365TalentLearn'}
         },
         {
             key: 'problems',
             text: 'Problems',
-            iconProps: {iconName: 'WaitlistConfirm'},
-            href: '/problems'
+            href: '/problems',
+            iconProps: {iconName: 'WaitlistConfirm'}
         }
     ];
 
