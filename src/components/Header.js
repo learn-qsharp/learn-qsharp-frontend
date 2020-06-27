@@ -1,34 +1,38 @@
 import React from 'react';
-import {Layer, Label, FontIcon} from '@fluentui/react';
-import {getTheme, mergeStyles} from '@fluentui/react';
+import {Layer, CommandBar} from '@fluentui/react';
+import {getTheme, mergeStyles} from "@fluentui/react";
 
 export default function Header() {
     const theme = getTheme();
 
-    const headerClass = mergeStyles({
-        display: 'flex',
-        padding: '0 20px',
-        lineHeight: '50px',
-        alignItems: 'center',
-        flexDirection: 'row',
-        backgroundColor: theme.palette.white,
-    });
+    const tittleClass = mergeStyles({
+        marginTop: 'auto',
+        marginBottom: 'auto',
+        color: theme.palette.neutralPrimary
+    })
 
-    const iconClass = mergeStyles({
-        fontSize: 30,
-    });
-
-    const labelClass = mergeStyles({
-        fontWeight: 'bold',
-        marginLeft: '5px'
-    });
+    const items = [
+        {
+            onRender: () => <h2 className={tittleClass}>Learn QSharp</h2>
+        },
+        {
+            key: '-'
+        },
+        {
+            key: 'tutorials',
+            text: 'Tutorials',
+            iconProps: {iconName: 'D365TalentLearn'},
+        },
+        {
+            key: 'problems',
+            text: 'Problems',
+            iconProps: {iconName: 'WaitlistConfirm'},
+        }
+    ];
 
     return (
         <Layer>
-            <div className={headerClass}>
-                <FontIcon iconName="CompassNW" className={iconClass}/>
-                <Label className={labelClass}>Learn QSharp</Label>
-            </div>
+            <CommandBar items={items}/>
         </Layer>
     );
 }
