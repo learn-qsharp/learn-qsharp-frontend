@@ -21,11 +21,13 @@ export default function Header() {
             key: 'tutorials',
             text: 'Tutorials',
             iconProps: {iconName: 'D365TalentLearn'},
+            href: '/tutorials'
         },
         {
             key: 'problems',
             text: 'Problems',
             iconProps: {iconName: 'WaitlistConfirm'},
+            href: '/problems'
         }
     ];
 
