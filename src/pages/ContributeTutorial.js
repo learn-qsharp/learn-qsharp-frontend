@@ -1,5 +1,6 @@
 import React from 'react';
 import Editor from 'rich-markdown-editor';
+import {Stack, DefaultButton, PrimaryButton} from '@fluentui/react';
 import {getTheme, mergeStyles} from '@fluentui/react';
 
 export default function ContributeTutorial() {
@@ -23,6 +24,14 @@ export default function ContributeTutorial() {
     const editorClass = mergeStyles({
         marginLeft: theme.spacing.l2
     });
+
+    const stackClass = mergeStyles({
+        marginTop: theme.spacing.s1,
+        marginLeft: theme.spacing.l2,
+        marginRight: theme.spacing.l2
+    })
+
+    const stackTokens = {childrenGap: 10};
 
     const onChangeHandler = (value) => {
         console.log(value());
@@ -52,6 +61,10 @@ export default function ContributeTutorial() {
             <div className={cardClass}>
                 <Editor onChange={onChangeHandler} defaultValue={markdownTemplate} className={editorClass}/>
             </div>
+            <Stack horizontal reversed tokens={stackTokens} className={stackClass}>
+                <PrimaryButton text="Save" allowDisabledFocus/>
+                <DefaultButton text="Request for Review"/>
+            </Stack>
         </>
     );
 }
