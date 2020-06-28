@@ -1,7 +1,14 @@
 import React from 'react';
 import {CommandBar} from '@fluentui/react';
+import {getTheme, mergeStyles} from '@fluentui/react';
 
 export default function Header() {
+    const theme = getTheme();
+
+    const commandBarClass = mergeStyles({
+        boxShadow: theme.effects.elevation8
+    });
+
     const titleClass = {
         label: {
             fontSize: 20,
@@ -58,6 +65,6 @@ export default function Header() {
     ];
 
     return (
-        <CommandBar items={items}/>
+        <CommandBar className={commandBarClass} items={items}/>
     );
 }
