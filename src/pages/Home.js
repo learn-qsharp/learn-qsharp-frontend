@@ -1,5 +1,6 @@
 import React from "react";
+import PageTitle from "../components/PageTitle";
 
 export default function Home() {
-    return <h2>Home</h2>;
+    return <PageTitle>Home</PageTitle>;
 }

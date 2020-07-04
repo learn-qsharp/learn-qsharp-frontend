@@ -1,5 +1,6 @@
 import React from "react";
+import PageTitle from "../components/PageTitle";
 
 export default function Problems() {
-    return <h2>Problems</h2>;
+    return <PageTitle>Problems</PageTitle>;
 }
