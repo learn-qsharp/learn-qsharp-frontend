@@ -18,7 +18,7 @@ export default function Tutorials() {
 
     const difficultyStyle = {
         color: theme.palette.white,
-        borderRadius: '25%/50%',
+        borderRadius: '1020px',
         fontWeight: 'bold',
         padding: '3px 6px 3px 6px',
     };
@@ -28,7 +28,7 @@ export default function Tutorials() {
     }, difficultyStyle)
 
     const mediumDifficultyClass = mergeStyles({
-        backgroundColor: theme.palette.yellow,
+        backgroundColor: theme.palette.orangeLighter,
     }, difficultyStyle)
 
     const hardDifficultyClass = mergeStyles({
