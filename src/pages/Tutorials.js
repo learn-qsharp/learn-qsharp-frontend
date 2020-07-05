@@ -42,13 +42,21 @@ export default function Tutorials() {
             name: 'Title',
             fieldName: 'title',
             isRowHeader: true,
+            minWidth: 150,
+            maxWidth: 200,
 
             onRender: (item) => {
                 return <Link href={"/tutorials/" + item.id}>{item.title}</Link>;
             },
         },
+        {
+            key: 'description',
+            name: 'Description',
+            fieldName: 'description',
+            minWidth: 400,
+            isMultiline: true,
+        },
         {key: 'tags', name: 'Tags', fieldName: 'tags', minWidth: 150},
-        {key: 'author', name: 'Author', fieldName: 'author'},
         {
             key: 'difficulty',
             name: 'Difficulty',
@@ -78,8 +86,8 @@ export default function Tutorials() {
                         key: tutorial.id,
                         id: tutorial.id,
                         title: tutorial.title,
+                        description: tutorial.description,
                         tags: tutorial.tags.join(', '),
-                        author: tutorial.author,
                         difficulty: tutorial.difficulty,
                     }
 
