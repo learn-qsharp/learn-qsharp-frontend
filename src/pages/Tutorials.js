@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from "react";
 import PageTitle from "../components/PageTitle";
-import {DetailsList} from "@fluentui/react"
+import {DetailsList, Link} from "@fluentui/react"
 import {getTheme, mergeStyles} from "@fluentui/react"
 import {SelectionMode} from "@fluentui/react"
 
 export default function Tutorials() {
     const [items, setItems] = useState([]);
-    // const [hasError, setHasError] = useState(false);
-    // const [error, setError] = useState('');
 
     const theme = getTheme();
 
@@ -20,7 +18,16 @@ export default function Tutorials() {
 
     const columns = [
         {key: 'id', name: '#', fieldName: 'id', minWidth: 16, maxWidth: 16},
-        {key: 'title', name: 'Title', fieldName: 'title', isRowHeader: true},
+        {
+            key: 'title',
+            name: 'Title',
+            fieldName: 'title',
+            isRowHeader: true,
+
+            onRender: (item) => {
+                return <Link href={"/tutorials/" + item.id}>{item.title}</Link>;
+            },
+        },
         {key: 'tags', name: 'Tags', fieldName: 'tags'},
         {key: 'author', name: 'Author', fieldName: 'author'},
         {key: 'difficulty', name: 'Difficulty', fieldName: 'difficulty'},
@@ -45,10 +52,6 @@ export default function Tutorials() {
                     setItems(items => [...items, item])
                 })
             })
-        // .catch((err) => {
-        // setError(err)
-        // setHasError(true)
-        // })
     }, []);
 
     return (
