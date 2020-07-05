@@ -10,7 +10,7 @@ export default function Tutorials() {
 
     const columns = [
         {key: 'id', name: '#', fieldName: 'id', minWidth: 16, maxWidth: 16},
-        {key: 'title', name: 'Title', fieldName: 'title'},
+        {key: 'title', name: 'Title', fieldName: 'title', isRowHeader: true},
         {key: 'tags', name: 'Tags', fieldName: 'tags'},
         {key: 'author', name: 'Author', fieldName: 'author'},
         {key: 'difficulty', name: 'Difficulty', fieldName: 'difficulty'},
