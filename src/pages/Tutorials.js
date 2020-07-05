@@ -16,6 +16,25 @@ export default function Tutorials() {
         backgroundColor: theme.semanticColors.bodyFrameBackground
     });
 
+    const difficultyStyle = {
+        color: theme.palette.white,
+        borderRadius: '25%/50%',
+        fontWeight: 'bold',
+        padding: '3px 6px 3px 6px',
+    };
+
+    const easyDifficultyClass = mergeStyles({
+        backgroundColor: theme.palette.green,
+    }, difficultyStyle)
+
+    const mediumDifficultyClass = mergeStyles({
+        backgroundColor: theme.palette.yellow,
+    }, difficultyStyle)
+
+    const hardDifficultyClass = mergeStyles({
+        backgroundColor: theme.palette.red,
+    }, difficultyStyle)
+
     const columns = [
         {key: 'id', name: '#', fieldName: 'id', minWidth: 16, maxWidth: 16},
         {
@@ -30,7 +49,22 @@ export default function Tutorials() {
         },
         {key: 'tags', name: 'Tags', fieldName: 'tags', minWidth: 150},
         {key: 'author', name: 'Author', fieldName: 'author'},
-        {key: 'difficulty', name: 'Difficulty', fieldName: 'difficulty'},
+        {
+            key: 'difficulty',
+            name: 'Difficulty',
+            fieldName: 'difficulty',
+
+            onRender: (item) => {
+                switch (item.difficulty) {
+                    case "easy":
+                        return <span className={easyDifficultyClass}>Easy</span>;
+                    case "medium":
+                        return <span className={mediumDifficultyClass}>Medium</span>;
+                    default:
+                        return <span className={hardDifficultyClass}>Hard</span>;
+                }
+            },
+        },
     ];
 
     useEffect(() => {
