@@ -1,12 +1,22 @@
 import React, {useEffect, useState} from "react";
 import PageTitle from "../components/PageTitle";
 import {DetailsList} from "@fluentui/react"
+import {getTheme, mergeStyles} from "@fluentui/react"
 import {SelectionMode} from "@fluentui/react"
 
 export default function Tutorials() {
     const [items, setItems] = useState([]);
     // const [hasError, setHasError] = useState(false);
     // const [error, setError] = useState('');
+
+    const theme = getTheme();
+
+    const cardClass = mergeStyles({
+        marginLeft: theme.spacing.l2,
+        marginRight: theme.spacing.l2,
+        boxShadow: theme.effects.elevation4,
+        backgroundColor: theme.semanticColors.bodyFrameBackground
+    });
 
     const columns = [
         {key: 'id', name: '#', fieldName: 'id', minWidth: 16, maxWidth: 16},
@@ -39,12 +49,14 @@ export default function Tutorials() {
         // setError(err)
         // setHasError(true)
         // })
-    }, [])
+    }, []);
 
     return (
         <>
             <PageTitle>Tutorials</PageTitle>
-            <DetailsList columns={columns} items={items} selectionMode={SelectionMode.none}/>
+            <div className={cardClass}>
+                <DetailsList columns={columns} items={items} selectionMode={SelectionMode.none}/>
+            </div>
         </>
     );
 }
