@@ -14,7 +14,7 @@ export default function App() {
     const theme = getTheme();
 
     useEffect(() => {
-        document.body.style.backgroundColor = theme.semanticColors.bodyBackground;
+        document.body.style.backgroundColor = theme.semanticColors.bodyStandoutBackground;
     });
 
     return (
