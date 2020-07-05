@@ -28,7 +28,7 @@ export default function Tutorials() {
                 return <Link href={"/tutorials/" + item.id}>{item.title}</Link>;
             },
         },
-        {key: 'tags', name: 'Tags', fieldName: 'tags'},
+        {key: 'tags', name: 'Tags', fieldName: 'tags', minWidth: 150},
         {key: 'author', name: 'Author', fieldName: 'author'},
         {key: 'difficulty', name: 'Difficulty', fieldName: 'difficulty'},
     ];
@@ -44,7 +44,7 @@ export default function Tutorials() {
                         key: tutorial.id,
                         id: tutorial.id,
                         title: tutorial.title,
-                        tags: tutorial.tags,
+                        tags: tutorial.tags.join(', '),
                         author: tutorial.author,
                         difficulty: tutorial.difficulty,
                     }
