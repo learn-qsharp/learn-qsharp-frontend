@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import PageTitle from "../components/PageTitle";
+import PageCard from "../components/PageCard";
 import {DetailsList, Link} from "@fluentui/react"
 import {getTheme, mergeStyles} from "@fluentui/react"
 import {SelectionMode} from "@fluentui/react"
@@ -8,13 +9,6 @@ export default function Tutorials() {
     const [items, setItems] = useState([]);
 
     const theme = getTheme();
-
-    const cardClass = mergeStyles({
-        marginLeft: theme.spacing.l2,
-        marginRight: theme.spacing.l2,
-        boxShadow: theme.effects.elevation4,
-        backgroundColor: theme.semanticColors.bodyFrameBackground
-    });
 
     const difficultyStyle = {
         color: theme.palette.white,
@@ -99,9 +93,9 @@ export default function Tutorials() {
     return (
         <>
             <PageTitle>Tutorials</PageTitle>
-            <div className={cardClass}>
+            <PageCard>
                 <DetailsList columns={columns} items={items} selectionMode={SelectionMode.none}/>
-            </div>
+            </PageCard>
         </>
     );
 }
