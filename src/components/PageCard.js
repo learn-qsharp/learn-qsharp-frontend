@@ -8,7 +8,7 @@ export default function PageCard(props) {
         marginLeft: theme.spacing.l2,
         marginRight: theme.spacing.l2,
         boxShadow: theme.effects.elevation4,
-        backgroundColor: theme.semanticColors.bodyFrameBackground
+        backgroundColor: theme.semanticColors.bodyFrameBackground,
     });
 
     return <div className={cardClass}>{props.children}</div>;
