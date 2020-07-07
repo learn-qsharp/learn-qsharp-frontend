@@ -4,12 +4,37 @@ import {getTheme, mergeStyles} from "@fluentui/react"
 export default function PageTitle(props) {
     const theme = getTheme();
 
-    const titleClass = mergeStyles({
+    const divClass = mergeStyles({
         marginTop: theme.spacing.l2,
         marginLeft: theme.spacing.l2,
         marginBottom: theme.spacing.l2,
+    });
+
+    const titleClass = mergeStyles({
+        display: 'inline-block',
+        marginRight: theme.spacing.m,
         color: theme.semanticColors.bodyText,
     }, theme.fonts.xxLarge);
 
-    return <div className={titleClass}>{props.children}</div>;
+    const authorClass = mergeStyles({
+        fontStyle: 'italic',
+        color: theme.semanticColors.bodySubtext,
+    }, theme.fonts.small);
+
+    const subTitleClass = mergeStyles({
+        display: 'inline-block',
+        color: theme.semanticColors.bodySubtext,
+    }, theme.fonts.medium);
+
+    return (
+        <div className={divClass}>
+            <div className={titleClass}>{props.children}</div>
+            {props.subtitle &&
+            <div className={subTitleClass}>{props.subtitle}</div>
+            }
+            {props.author &&
+            <div className={authorClass}>{props.author}</div>
+            }
+        </div>
+    );
 }
