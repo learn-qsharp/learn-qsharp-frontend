@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
 import PageTitle from "../components/PageTitle";
 import PageCard from "../components/PageCard";
-import {DetailsList, Link} from "@fluentui/react"
+import {ShimmeredDetailsList, Link} from "@fluentui/react"
 import {getTheme, mergeStyles} from "@fluentui/react"
 import {SelectionMode} from "@fluentui/react"
 
 export default function Tutorials() {
     const [items, setItems] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const theme = getTheme();
 
@@ -88,13 +89,17 @@ export default function Tutorials() {
                     setItems(items => [...items, item])
                 })
             })
+            .finally(() => {
+                setIsLoading(false);
+            })
     }, []);
 
     return (
         <>
             <PageTitle>Tutorials</PageTitle>
             <PageCard>
-                <DetailsList columns={columns} items={items} selectionMode={SelectionMode.none}/>
+                <ShimmeredDetailsList columns={columns} items={items} selectionMode={SelectionMode.none}
+                                      enableShimmer={isLoading}/>
             </PageCard>
         </>
     );
