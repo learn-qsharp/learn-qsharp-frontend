@@ -32,8 +32,8 @@ export default function PageTitle(props) {
             {props.subtitle &&
             <div className={subTitleClass}>{props.subtitle}</div>
             }
-            {props.author &&
-            <div className={authorClass}>{props.author}</div>
+            {props.credits &&
+            <div className={authorClass}>{props.credits}</div>
             }
         </div>
     );

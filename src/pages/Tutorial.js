@@ -39,7 +39,7 @@ export default function Tutorial() {
         <>
             {tutorial &&
             <>
-                <PageTitle author={tutorial.author} subtitle={'Tutorial'}>{tutorial.title}</PageTitle>
+                <PageTitle credits={tutorial.credits} subtitle={'Tutorial'}>{tutorial.title}</PageTitle>
                 <PageCard>
                     <ReactMarkdown className={markdownRootClass} source={tutorial.body}/>
                 </PageCard>
