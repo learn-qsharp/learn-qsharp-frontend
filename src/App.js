@@ -1,10 +1,6 @@
-import React, {useEffect} from "react";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
-import {getTheme} from "@fluentui/react"
+import React from "react";
+import {BrowserRouter as Router} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Tutorials from "./pages/Tutorials";
@@ -13,12 +9,6 @@ import Problems from "./pages/Problems";
 import Problem from "./pages/Problem";
 
 export default function App() {
-    const theme = getTheme();
-
-    useEffect(() => {
-        document.body.style.backgroundColor = theme.semanticColors.bodyStandoutBackground;
-    });
-
     return (
         <Router>
             <div>
