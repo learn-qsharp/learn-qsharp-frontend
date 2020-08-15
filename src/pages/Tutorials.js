@@ -2,34 +2,13 @@ import React, {useEffect, useState} from "react";
 import PageTitle from "../components/PageTitle";
 import PageCard from "../components/PageCard";
 import {ShimmeredDetailsList, Link} from "@fluentui/react"
-import {getTheme, mergeStyles} from "@fluentui/react"
 import {SelectionMode} from "@fluentui/react"
 import Page from "../components/Page";
+import {Easy, Hard, Medium} from "../components/DifficultyLabels";
 
 export default function Tutorials() {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-
-    const theme = getTheme();
-
-    const difficultyStyle = {
-        color: theme.palette.white,
-        borderRadius: '1020px',
-        fontWeight: 'bold',
-        padding: '3px 6px 3px 6px',
-    };
-
-    const easyDifficultyClass = mergeStyles({
-        backgroundColor: theme.palette.green,
-    }, difficultyStyle)
-
-    const mediumDifficultyClass = mergeStyles({
-        backgroundColor: theme.palette.orangeLighter,
-    }, difficultyStyle)
-
-    const hardDifficultyClass = mergeStyles({
-        backgroundColor: theme.palette.red,
-    }, difficultyStyle)
 
     const columns = [
         {key: 'id', name: '#', fieldName: 'id', minWidth: 16, maxWidth: 16},
@@ -61,11 +40,11 @@ export default function Tutorials() {
             onRender: (item) => {
                 switch (item.difficulty) {
                     case "easy":
-                        return <span className={easyDifficultyClass}>Easy</span>;
+                        return <Easy/>;
                     case "medium":
-                        return <span className={mediumDifficultyClass}>Medium</span>;
+                        return <Medium/>;
                     default:
-                        return <span className={hardDifficultyClass}>Hard</span>;
+                        return <Hard/>;
                 }
             },
         },
@@ -77,7 +56,7 @@ export default function Tutorials() {
                 return response.json()
             })
             .then((tutorials) => {
-                tutorials.forEach((tutorial, i) => {
+                tutorials.forEach((tutorial) => {
                     const item = {
                         key: tutorial.id,
                         id: tutorial.id,
