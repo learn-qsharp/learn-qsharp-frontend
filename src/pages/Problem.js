@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 import {getTheme, mergeStyles} from "@fluentui/react";
 import Page from "../components/Page";
 
-export default function Tutorial() {
+export default function Problem() {
     const {id} = useParams();
 
     const [tutorial, setTutorial] = useState(null);
@@ -27,7 +27,7 @@ export default function Tutorial() {
     });
 
     useEffect(() => {
-        fetch(process.env.REACT_APP_API_URL + '/tutorials/' + id)
+        fetch(process.env.REACT_APP_API_URL + '/problems/' + id)
             .then((response) => {
                 return response.json()
             })
@@ -37,10 +37,10 @@ export default function Tutorial() {
     }, [id]);
 
     return (
-        <Page titleSuffix={'Tutorial ' + id}>
+        <Page titleSuffix={'Problem ' + id}>
             {tutorial &&
             <>
-                <PageTitle credits={tutorial.credits} subtitle={'Tutorial'}>{tutorial.title}</PageTitle>
+                <PageTitle credits={tutorial.credits} subtitle={'Problem'}>{tutorial.name}</PageTitle>
                 <PageCard>
                     <ReactMarkdown className={markdownRootClass} source={tutorial.body}/>
                 </PageCard>
