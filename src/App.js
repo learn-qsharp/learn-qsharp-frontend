@@ -5,8 +5,8 @@ import {
     Route
 } from "react-router-dom";
 import {getTheme} from "@fluentui/react"
-import Home from "./pages/Home";
 import Header from "./components/Header";
+import Home from "./pages/Home";
 import Tutorials from "./pages/Tutorials";
 import Tutorial from "./pages/Tutorial";
 import Problems from "./pages/Problems";

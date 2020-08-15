@@ -4,6 +4,7 @@ import PageTitle from "../components/PageTitle";
 import PageCard from "../components/PageCard";
 import ReactMarkdown from "react-markdown";
 import {getTheme, mergeStyles} from "@fluentui/react";
+import Page from "../components/Page";
 
 export default function Problem() {
     const {id} = useParams();
@@ -36,7 +37,7 @@ export default function Problem() {
     }, [id]);
 
     return (
-        <>
+        <Page titleSuffix={'Problem ' + id}>
             {tutorial &&
             <>
                 <PageTitle credits={tutorial.credits} subtitle={'Problem'}>{tutorial.name}</PageTitle>
@@ -45,6 +46,6 @@ export default function Problem() {
                 </PageCard>
             </>
             }
-        </>
+        </Page>
     );
 }

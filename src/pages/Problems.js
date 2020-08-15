@@ -4,6 +4,7 @@ import PageCard from "../components/PageCard";
 import {ShimmeredDetailsList, Link} from "@fluentui/react"
 import {getTheme, mergeStyles} from "@fluentui/react"
 import {SelectionMode} from "@fluentui/react"
+import Page from "../components/Page";
 
 export default function Problems() {
     const [items, setItems] = useState([]);
@@ -87,12 +88,12 @@ export default function Problems() {
     }, []);
 
     return (
-        <>
+        <Page titleSuffix="Problems">
             <PageTitle>Problems</PageTitle>
             <PageCard>
                 <ShimmeredDetailsList columns={columns} items={items} selectionMode={SelectionMode.none}
                                       enableShimmer={isLoading}/>
             </PageCard>
-        </>
+        </Page>
     );
 }
