@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import PageTitle from "../components/PageTitle";
+import PageHeader from "../components/PageHeader";
 import PageCard from "../components/PageCard";
 import {ShimmeredDetailsList, Link} from "@fluentui/react"
 import {SelectionMode} from "@fluentui/react"
@@ -68,7 +68,7 @@ export default function Problems() {
 
     return (
         <Page titleSuffix="Problems">
-            <PageTitle>Problems</PageTitle>
+            <PageHeader>Problems</PageHeader>
             <PageCard>
                 <ShimmeredDetailsList columns={columns} items={items} selectionMode={SelectionMode.none}
                                       enableShimmer={isLoading}/>

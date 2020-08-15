@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import PageTitle from "../components/PageTitle";
+import PageHeader from "../components/PageHeader";
 import PageCard from "../components/PageCard";
 import ReactMarkdown from "react-markdown";
 import {getTheme, mergeStyles} from "@fluentui/react";
@@ -40,7 +40,7 @@ export default function Problem() {
         <Page titleSuffix={'Problem ' + id}>
             {tutorial &&
             <>
-                <PageTitle credits={tutorial.credits} subtitle={'Problem'}>{tutorial.name}</PageTitle>
+                <PageHeader credits={tutorial.credits} subtitle={'Problem'}>{tutorial.name}</PageHeader>
                 <PageCard>
                     <ReactMarkdown className={markdownRootClass} source={tutorial.body}/>
                 </PageCard>

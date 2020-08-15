@@ -1,11 +1,11 @@
 import React from "react";
-import PageTitle from "../components/PageTitle";
+import PageHeader from "../components/PageHeader";
 import Page from "../components/Page";
 
 export default function Home() {
     return (
         <Page titleSuffix="Home">
-            <PageTitle>Home</PageTitle>
+            <PageHeader>Home</PageHeader>
         </Page>
     );
 }

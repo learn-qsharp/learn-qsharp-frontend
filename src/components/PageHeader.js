@@ -1,7 +1,7 @@
 import React from "react";
 import {getTheme, mergeStyles} from "@fluentui/react"
 
-export default function PageTitle(props) {
+export default function PageHeader(props) {
     const theme = getTheme();
 
     const divClass = mergeStyles({

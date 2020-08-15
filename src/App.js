@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router} from "react-router-dom";
 import {Switch, Route} from "react-router-dom";
-import Header from "./components/Header";
+import CommandBar from "./components/CommandBar";
 import Home from "./pages/Home";
 import Tutorials from "./pages/Tutorials";
 import Tutorial from "./pages/Tutorial";
@@ -12,7 +12,7 @@ export default function App() {
     return (
         <Router>
             <div>
-                <Header/>
+                <CommandBar/>
 
                 {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}

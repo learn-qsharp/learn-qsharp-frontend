@@ -1,8 +1,8 @@
 import React from "react";
-import {CommandBar} from "@fluentui/react";
+import {CommandBar as FluentUICommandBar} from "@fluentui/react";
 import {getTheme, mergeStyles} from "@fluentui/react";
 
-export default function Header() {
+export default function CommandBar() {
     const theme = getTheme();
 
     const commandBarClass = mergeStyles({
@@ -43,6 +43,6 @@ export default function Header() {
     ];
 
     return (
-        <CommandBar className={commandBarClass} items={items}/>
+        <FluentUICommandBar className={commandBarClass} items={items}/>
     );
 }
